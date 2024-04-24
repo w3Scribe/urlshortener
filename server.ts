@@ -18,6 +18,6 @@ async function server() {
   });
 }
 
-console.log("hello world")
+// console.log("hello world")
 
 server();
