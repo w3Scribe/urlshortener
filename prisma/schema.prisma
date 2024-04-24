@@ -14,18 +14,18 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @unique @default(autoincrement())
+  id        String    @id @unique @default(uuid())
   url       String
-  shortUrl  String    @unique @map("short_url")
-  createdAt DateTime  @default(now()) @map("created_at")
-  updatedAt DateTime  @updatedAt @map("updated_at")
-  History   History[]
+  shortUrl  String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  histories History[]
 }
 
 model History {
-  id        Int      @id @unique @default(autoincrement())
-  action    String
+  id        String   @id @unique @default(uuid())
+  action    String // Consider using a more descriptive name (e.g., `activity`)
   timestamp DateTime @default(now())
-  userId    Int      @map("user_id")
+  userId    String
   user      User     @relation(fields: [userId], references: [id])
 }
