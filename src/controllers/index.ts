@@ -13,18 +13,24 @@ async function addHistory(userId: number, action: string) {
 
 // getShortUrl
 export const getShortUrl: IExpressRequestAsync = async (req, res, next) => {
-  const id = parseInt(req.body.id)
-  if (isNaN(id)) return res.status(400).json({ msg: "User not found." })
+  const id = parseInt(req.params.id);
+  if (isNaN(id)) return res.status(400).json({ msg: "User not found." });
 
   try {
-    const user = await __env.__PRISMA_CLIENT.user.findUnique({ where: { id } })
-    if (!user) return res.status(400).json({ error: "User ID is required." });
-    await addHistory(user?.id as number, "access").catch(err => next(err))
-    res.status(200).json({ short_url: user?.shortUrl });
+    const user = await __env.__PRISMA_CLIENT.user.findUnique({ where: { id } });
+    if (!user) return res.status(400).json({ error: "User not found." });
+    await addHistory(user?.id as number, "access").catch(err => next(err));
+
+    // Ensure the URL starts with http:// or https://
+    const url = user?.url.startsWith('http://') || user?.url.startsWith('https://')
+      ? user?.url
+      : `http://${user?.url}`;
+    res.redirect(url);
   } catch (error) {
     next(error);
   }
-}
+};
+
 
 // createShortUrl
 export const createShortUrl: IExpressRequestAsync = async (req, res, next) => {
