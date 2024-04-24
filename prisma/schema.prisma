@@ -14,7 +14,18 @@ datasource db {
 }
 
 model User {
-  id    String  @id @unique @default(uuid())
-  name  String
-  email String?
+  id        Int       @id @unique @default(autoincrement())
+  url       String
+  shortUrl  String    @unique @map("short_url")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  History   History[]
+}
+
+model History {
+  id        Int      @id @unique @default(autoincrement())
+  action    String
+  timestamp DateTime @default(now())
+  userId    Int      @map("user_id")
+  user      User     @relation(fields: [userId], references: [id])
 }
