@@ -7,7 +7,7 @@ export interface IExpressRequest {
 }
 
 export interface IExpressRequestAsync {
-  async (req: Request, res: Response, next: NextFunction): Promise<unknown>
+  (req: Request, res: Response, next: NextFunction): Promise<unknown>;
 }
 
 export interface IGlobalError {
