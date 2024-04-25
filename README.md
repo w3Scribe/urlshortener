@@ -2,6 +2,28 @@
 
   This project is a URL shortener service that converts long URLs into short, manageable links that are easier to share and manage. It's built with Node.js, Express, and uses Prisma with a SQL database for data persistence.
 
+  ## Features
+
+  - Shorten long URLs into short links.
+  - Redirect short links to the original URLs.
+  - View the number of times a short link has been clicked.
+  - View a list of all short links created.
+  
+  ## Technologies
+
+  The project uses the following technologies:
+
+
+| Technology | Description | Logo |
+|------------|-------------|------|
+| Node.js | The project uses Node.js for the backend server. | <img src="./public/images/nodejs.png" alt="nodejs" width="40" height="45"> |
+| Express | Express is used as the web framework for the project. | <img src="./public/images/express.png" alt="express" width="100" height="20"> |
+| Prisma | Prisma is used as the ORM for the project. | <img src="./public/images/prisma.png" alt="prisma" width="35" height="40"> |
+| Tailwind CSS | Tailwind CSS is used for styling the frontend. | <img src="./public/images/tailwindcss.png" alt="tailwindcss" width="130" height="20"> |
+| EJS | EJS is used as the templating engine for the project. | <img src="./public/images/ejs.png" alt="ejs" width="60" height="35"> |
+| MySQL | MySQL is used as the database for the project. | <img src="./public/images/mysql.png" alt="sqlite" width="110" height="40"> |
+
+
   ## Installation
 
   To set up this project locally, follow these steps:
