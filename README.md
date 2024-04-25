@@ -1,29 +1,50 @@
   # URL Shortener
 
-  This URL shortener converts long URLs into short, manageable links that are easier to share and manage.
+  This project is a URL shortener service that converts long URLs into short, manageable links that are easier to share and manage. It's built with Node.js, Express, and uses Prisma with a SQL database for data persistence.
 
   ## Installation
 
-  1. Clone the repository: `git clone https://github.com/w3Scribe/urlshortener.git`
-  2. Navigate to the project directory: `cd urlshortener`
-  3. Install dependencies: `npm install`
+  To set up this project locally, follow these steps:
 
-  ## Usage
-
-  1. Run the project: `npm start`
-  2. Open your browser and visit `http://localhost:3000`
-  3. Follow the instructions on the webpage to use the URL shortener.
-
+  1. Clone the repository: git clone https://github.com/w3Scribe/urlshortener.git
+  2. Change into the project directory: cd urlshortener
+  3. Install the dependencies: npm install
+  
+  ## Development
+  
+  To run the project in development mode with live reloading:
+  
+  1. Start the development server: npm run dev
+   
+  2. The server will start, and Tailwind CSS will be watched for changes. Open your browser and visit `http://localhost:3000` to view the application.
+  
+  ## Building for Production
+  
+  To build the project for production:
+  
+  1. Clean the `dist` directory and build the project: npm run build
+  2. Start the production server: npm start
+  
+  ## Project Structure
+  
+  The project has the following structure:
+  
+  - `.env`: Environment variables configuration.
+  - `src/`: Source files including Express server setup, routes, controllers, and views.
+  - `prisma/`: Prisma schema and migrations for database management.
+  - `dist/`: Compiled JavaScript files and assets for production.
+  - `views/`: EJS templates and Tailwind CSS files for the frontend.
+  
   ## Contributing
-
-  If you'd like to contribute to this project, please follow these steps:
-
-  1. Fork the repository
-  2. Create a new branch: `git checkout -b feature/your-feature`
-  3. Make your changes and commit them: `git commit -m 'Add your feature'`
-  4. Push to the branch: `git push origin feature/your-feature`
-  5. Submit a pull request
-
+  
+  Contributions are welcome! To contribute:
+  
+  1. Fork the repository.
+  2. Create a new branch for your feature: git checkout -b feature-name
+  3. Commit your changes: git commit -am 'Add new feature'
+  4. Push to your branch: git push origin feature-name
+  5. Submit a pull request.
+   
   ## License
 
-  This project is licensed under the [MIT License](LICENSE).
+  This project is open source and available under the [MIT License](LICENSE).
