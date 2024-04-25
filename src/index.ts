@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.set('view engine', 'ejs');
-app.set('views', join(__dirname, 'views'));
+app.set('views', join(__dirname, 'views/pages'));
 
 // routes
 app.use('/home', UserRouter)
