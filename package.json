@@ -7,12 +7,11 @@
   "scripts": {
     "dev": "npm-run-all --parallel watch:*",
     "watch:server": "tsnd --cls --respawn server.ts",
-    "watch:css": "npx tailwindcss -i ./src/views/input.css -o ./src/views/output.css --watch",
+    "watch:css": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
     "start": "node dist/server.js",
     "clean": "rimraf ./dist/",
     "copy": "copyfiles -u 1 ./src/**/*.{ejs,js} ./dist/src",
-    "build": "npm run clean && tsc && npm run copy && npm run build:css",
-    "build:css": "npx tailwindcss -i ./src/views/input.css -o ./dist/src/views/output.css"
+    "build": "npm run clean && tsc && npm run copy"
   },
   "author": "Sudhir Gadpayle <sudhirgadpayle535@gmail.com>",
   "license": "MIT",
