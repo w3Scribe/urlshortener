@@ -12,7 +12,7 @@ import { IExpressRequestAsync } from "../types"
 // getShortUrl
 export const Home: IExpressRequestAsync = async (req, res, next) => {
   try {
-    res.render('index')
+    res.render('home', { title: 'Home' })
   } catch (err) {
     next(err)
   }   
