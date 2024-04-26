@@ -1,22 +1,16 @@
-import express from 'express'
-import UserRouter from "./routes/users";
-import globalError from './middleware/globalError';
+import express from 'express';
 import { join } from 'path';
+import globalError from './middleware/globalError';
+import HomeRoute from './routes';
 
-const app = express()
-
-// middleware
-app.use(express.static("public"));
+const app = express();
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(express.json())
 
-app.set('view engine', 'ejs');
-app.set('views', join(__dirname, 'views/pages'));
+app.set('View Engine', 'ejs');
+app.set('view', join(__dirname, 'views/pages'))
 
-// routes
-app.use('/home', UserRouter)
-   
-// global Error
+app.use("/", HomeRoute);
 app.use(globalError)
 
 export default app

@@ -16,7 +16,7 @@ datasource db {
 model User {
   id        String    @id @unique @default(uuid())
   url       String
-  shortUrl  String    @unique
+  shortURL  String    @unique
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   histories History[]
@@ -28,4 +28,6 @@ model History {
   timestamp DateTime @default(now())
   userId    String
   user      User     @relation(fields: [userId], references: [id])
+  url       String
+  shortURL  String
 }
