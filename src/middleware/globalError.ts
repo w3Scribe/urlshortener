@@ -3,7 +3,7 @@ import { config } from "dotenv";
 
 config()
 
-const globalError: IGlobalError = (err, req, res, _next) => {
+const globalError: IGlobalError = (err, _req, res) => {
   const statusCode: number = err.statusCode || 500
   res.status(statusCode).send({
     ErrorMessage: "Internal Server Error",
