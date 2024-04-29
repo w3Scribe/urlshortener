@@ -1,4 +1,5 @@
-import  { Request, Response, NextFunction } from "express"
+import { User } from "@prisma/client";
+import { Request, Response, NextFunction } from "express"
 import { HttpError } from "http-errors"
 
 // Express 
@@ -12,4 +13,8 @@ export interface IExpressRequestAsync {
 
 export interface IGlobalError {
   (err: HttpError, req: Request, res: Response, next: NextFunction): void
+}
+
+export interface ICreateHistory {
+  (user: User, Action: string): Promise<unknown>
 }

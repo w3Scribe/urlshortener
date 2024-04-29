@@ -1,4 +1,4 @@
-import { createUserPost } from "./createUserPost";
+import { createUserPost } from "./createUserURL";
 import { deleteUserPost } from "./deleteUserPost";
 import { getUserData } from "./getUserData";
 

@@ -578,6 +578,18 @@ video {
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-\[30\%\] {
   width: 30%;
 }
@@ -592,6 +604,10 @@ video {
 
 .min-w-full {
   min-width: 100%;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 .justify-between {
