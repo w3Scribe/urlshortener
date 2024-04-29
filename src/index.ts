@@ -6,7 +6,7 @@ import globalError from './middleware/globalError';
 import HomeRoute from './routes/index';
 
 const reloadLiveServer = livereload.createServer({
-  exts: ['html', 'css', 'ejs', 'js'], // Add extensions of files you want to watch
+  exts: ['css', 'ejs', 'ts'], // Add extensions of files you want to watch
 });
 
 reloadLiveServer.watch([join(__dirname, 'views'), join(__dirname, '../public')])
