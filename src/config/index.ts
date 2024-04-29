@@ -1,7 +1,7 @@
-import { config } from "dotenv";
 import { PrismaClient } from "@prisma/client";
+import { loadEnvFile } from "process";
 
-config()
+loadEnvFile('./.env');
 
 export const __env = Object.freeze({
   __ENVORONMENT: process.env.NODE_ENV,
@@ -10,3 +10,4 @@ export const __env = Object.freeze({
   __MODEL_USER: new PrismaClient().user,
   __MODEL_HISTORY: new PrismaClient().history,
 });
+

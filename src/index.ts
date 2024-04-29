@@ -1,9 +1,9 @@
 import express from 'express';
 import { join } from 'path';
-import globalError from './middleware/globalError';
-import HomeRoute from './routes';
 import livereload from 'livereload';
 import connectLiveReload from 'connect-livereload';
+import globalError from './middleware/globalError';
+import HomeRoute from './routes/index';
 
 const reloadLiveServer = livereload.createServer({
   exts: ['html', 'css', 'ejs', 'js'], // Add extensions of files you want to watch

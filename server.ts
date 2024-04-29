@@ -1,6 +1,6 @@
-import app from "./src";
 import chalk from "chalk";
 import { __env } from './src/config/index';
+import app from "./src/index";
 
 async function dbConnetion() {
   await __env.__PRISMA_CLIENT.$connect()
