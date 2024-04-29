@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>urlsho</title>
-</head>
-<body>
-  <h1> <% inputText %> </h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>urlshortener</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-zinc-900">
+    <!-- header -->
+    <%- include("../partials/navbar.ejs") %>
+    
+    <!-- form -->
+    <form action="/" method="post" class="paddingX mt-10" autocomplete="off">
+      <div class="w-full sm:w-[400px] md:w-[450px] lg:w-[650px] flex gap-4">
+        <input
+          type="text"
+          placeholder="https://www.example.com"
+          name="url"
+          class="w-[70%] bg-zinc-800 px-2 py-1.5 focus:outline-none border border-zinc-600 placeholder:text-zinc-600 text-zinc-400"
+        />
+        <button
+          class="w-[30%] bg-zinc-800 px-2 py-1.5 text-zinc-300 focus:outline-none border border-zinc-600 hover:bg-zinc-600/45 capitalize"
+        >
+          create
+        </button>
+      </div>
+    </form>
+
+    <!-- table data -->
+    <div class="paddingX mt-10">
+      <table class="bg-zinc-800 min-w-full md:w-[580px] lg:min-w-[750px]">
+        <tr class="*:p-2 *:text-left *:text-zinc-400 border-b border-zinc-700">
+          <th>URL</th>
+          <th>SHORT URL</th>
+          <th>CLICKS</th>
+        </tr>
+        <tr class="text-zinc-500 *:p-2 *:max-w-20 sm:*:max-w-full *:truncate">
+          <td>Maria Anders</td>
+          <td>Germany</td>
+          <td>Maria Anders</td>
+        </tr>
+      </table>
+    </div>
+    <!-- live server relaod -->
+  </body>
 </html>

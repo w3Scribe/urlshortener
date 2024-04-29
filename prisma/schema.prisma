@@ -24,7 +24,7 @@ model User {
 
 model History {
   id        String   @id @unique @default(uuid())
-  action    String // Consider using a more descriptive name (e.g., `activity`)
+  action    String   // Consider using a more descriptive name (e.g., `activity`)
   timestamp DateTime @default(now())
   userId    String
   user      User     @relation(fields: [userId], references: [id])
