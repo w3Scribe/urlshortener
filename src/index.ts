@@ -6,7 +6,7 @@ import livereload from 'livereload';
 import connectLiveReload from 'connect-livereload';
 
 const reloadLiveServer = livereload.createServer({
-  exts: ['html', 'css', 'ejs', 'js'], // Add extensions of files you want to watch
+  exts: ['css', 'ejs', 'ts'], // Add extensions of files you want to watch
 });
 
 reloadLiveServer.watch([join(__dirname, 'views'), join(__dirname, '../public')])
