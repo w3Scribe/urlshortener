@@ -3,9 +3,9 @@ import { createUserPost, deleteUserPost, getUserData } from "../controllers/inde
 
 const HomeRoute = Router();
 
-HomeRoute
-  .get("/", getUserData)
-  .post('/', createUserPost)
-  .delete('/', deleteUserPost)
+HomeRoute.route("/")
+  .get(getUserData)
+  .post(createUserPost)
+  .delete(deleteUserPost)
 
 export default HomeRoute
